@@ -25,8 +25,8 @@ using namespace std;
 using namespace Constants;
 using namespace Solutions;
 
-//PaperTestProblem *problem_ptr;
-Triangle *problem_ptr;
+PaperTestProblem *problem_ptr;
+//Triangle *problem_ptr;
 int failures = 0;
 
 void eval(double *vars, double *objs, double *consts) {
@@ -206,8 +206,8 @@ int main(int argc, char *argv[]) {
         }
     }
 
-//    PaperTestProblem problem(n_weeks, import_export_rof_table);
-    Triangle problem(n_weeks, import_export_rof_table);
+    PaperTestProblem problem(n_weeks, import_export_rof_table);
+    //Triangle problem(n_weeks, import_export_rof_table);
 
     /// Set basic realization parameters.
     problem.setN_weeks(n_weeks);
@@ -252,11 +252,11 @@ int main(int argc, char *argv[]) {
             water_sources_rdm = std::vector<vector<double>>(n_realizations, water_sources_rdm_row);
 
             problem.setRDMReevaluation((unsigned long) rdm_no, utilities_rdm,
-                                                water_sources_rdm, policies_rdm);
+                                       water_sources_rdm, policies_rdm);
 
             if (strlen(inflows_evap_directory_suffix.c_str()) > 2)
                 problem.setFname_sufix("_RDM" + std::to_string(rdm_no) +
-                                                "_infevap" + inflows_evap_directory_suffix);
+                                       "_infevap" + inflows_evap_directory_suffix);
             else
                 problem.setFname_sufix("_RDM" + std::to_string(rdm_no));
         } else {
@@ -268,7 +268,7 @@ int main(int argc, char *argv[]) {
                                      "or equal to the number of rows in the rdm files.");
             }
             problem.setRDMReevaluation((unsigned long) rdm_no, utilities_rdm,
-                                                water_sources_rdm, policies_rdm);
+                                       water_sources_rdm, policies_rdm);
         }
     }
 
