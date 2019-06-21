@@ -2,7 +2,9 @@
 // Created by bct52 on 7/3/17.
 //
 
-#include "JordanLakeMinEnvFlowControl.h"
+#include "JordanLakeMinEnvFlowControl.h";
+#include <algorithm> 
+using namespace std;
 
 /**
  * This set of controls assumes that the Lillington gage is the next thing

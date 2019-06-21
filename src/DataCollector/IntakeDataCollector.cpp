@@ -1,7 +1,7 @@
 //
 // Created by bernardoct on 8/26/17.
 //
-
+#include <sstream>
 #include <iomanip>
 #include "IntakeDataCollector.h"
 

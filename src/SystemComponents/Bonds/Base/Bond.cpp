@@ -2,6 +2,7 @@
 // Created by bernardo on 4/12/18.
 //
 
+#include<string>
 #include "Bond.h"
 
 Bond::Bond(const int id, const double cost_of_capital, const int n_payments,

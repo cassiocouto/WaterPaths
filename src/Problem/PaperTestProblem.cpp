@@ -8,6 +8,7 @@
 #include <iterator>
 #include <fstream>
 #include <omp.h>
+#include <stdexcept>
 #ifdef  PARALLEL
 #include <mpi.h>
 #endif
@@ -200,7 +201,7 @@ int PaperTestProblem::functionEvaluation(double *vars, double *objs, double *con
     // Normalize lake michael allocations in case they exceed 1
     double sum_lma_allocations = dryville_LMA + fallsland_LMA + watertown_LMA;
     if (sum_lma_allocations == 0.)
-        __throw_invalid_argument("LMA allocations cannot be all "
+        throw invalid_argument("LMA allocations cannot be all "
                                  "zero.");
     if (sum_lma_allocations > 1){
         dryville_LMA /= sum_lma_allocations;

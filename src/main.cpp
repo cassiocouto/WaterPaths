@@ -12,9 +12,10 @@
 
 #include <sys/stat.h>
 #include <algorithm>
-#include <getopt.h>
+#include "Utils/XGetopt.h"
 #include <fstream>
 #include <omp.h>
+
 
 
 #define NUM_OBJECTIVES 5;
@@ -62,7 +63,7 @@ int main(int argc, char *argv[]) {
     const int c_num_obj = NUM_OBJECTIVES;
     int c_num_constr = 0;
     double c_obj[c_num_obj];
-    double c_constr[0];
+    double c_constr[1];
 
     unsigned long n_realizations = 1000;
     unsigned long n_weeks = 1565;

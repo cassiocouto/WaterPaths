@@ -247,7 +247,7 @@ Problem::setRofTables(unsigned long n_realizations, string rof_tables_directory)
             in_file.read(reinterpret_cast<char *>(&stringsize), sizeof(unsigned));
 
             /// Get table information from table files.
-            double data[stringsize];
+            double *data = new double[stringsize];
             in_file.read(reinterpret_cast<char *>(&data),
                     stringsize * sizeof(double));
 

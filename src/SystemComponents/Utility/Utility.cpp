@@ -397,8 +397,8 @@ void Utility::splitDemands(
     // volume to this utility.
     unsigned short over_allocated_sources = 0;
     double over_allocated_volume = 0;
-    double demand_fraction[water_sources.size()];
-    int not_over_allocated_ids[water_sources.size()];
+    double *demand_fraction = new double[water_sources.size()];
+    int *not_over_allocated_ids = new int[water_sources.size()];
     double sum_not_alloc_demand_fraction = 0;
     unsigned short not_over_allocated_sources = 0;
     for (int &ws : non_priority_draw_water_source) {

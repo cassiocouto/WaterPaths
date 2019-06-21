@@ -3,7 +3,10 @@
 //
 
 #include <numeric>
+#include <algorithm>
 #include "Quarry.h"
+using namespace std;
+
 
 Quarry::Quarry(
         const char *name, const int id,

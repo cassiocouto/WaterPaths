@@ -1,7 +1,7 @@
 //;;
 // Created by bernardoct on 8/26/17.
 //
-
+#include <sstream>
 #include <fstream>
 #include <iomanip>
 #include <sys/stat.h>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{C9D769AE-312F-4518-BC14-3826BAADFD4E}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Windows Kits\10\Include\10.0.17763.0\ucrt;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(MSMPI_INC);$(MSMPI_INC)\x64</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\continuitymodels\base\ContinuityModel.cpp" />
+    <ClCompile Include="src\continuitymodels\ContinuityModelRealization.cpp" />
+    <ClCompile Include="src\continuitymodels\ContinuityModelROF.cpp" />
+    <ClCompile Include="src\controls\base\MinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\base\MinEnvironFlowControl.cpp" />
+    <ClCompile Include="src\controls\custom\FallsLakeMinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\custom\JordanLakeMinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\EvaporationSeries.cpp" />
+    <ClCompile Include="src\controls\FixedMinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\InflowMinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\SeasonalMinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\StorageMinEnvFlowControl.cpp" />
+    <ClCompile Include="src\controls\WwtpDischargeRule.cpp" />
+    <ClCompile Include="src\datacollector\AllocatedReservoirDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\base\DataCollector.cpp" />
+    <ClCompile Include="src\datacollector\EmptyDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\IntakeDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\MasterDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\QuaryDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\ReservoirDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\RestrictionsDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\TransfersDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\UtilitiesDataCollector.cpp" />
+    <ClCompile Include="src\datacollector\WaterReuseDataCollector.cpp" />
+    <ClCompile Include="src\droughtmitigationinstruments\base\DroughtMitigationPolicy.cpp" />
+    <ClCompile Include="src\droughtmitigationinstruments\InsuranceStorageToROF.cpp" />
+    <ClCompile Include="src\droughtmitigationinstruments\Restrictions.cpp" />
+    <ClCompile Include="src\droughtmitigationinstruments\Transfers.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\problem\base\Problem.cpp" />
+    <ClCompile Include="src\problem\PaperTestProblem.cpp" />
+    <ClCompile Include="src\problem\Triangle.cpp" />
+    <ClCompile Include="src\simulation\Simulation.cpp" />
+    <ClCompile Include="src\systemcomponents\bonds\BalloonPaymentBond.cpp" />
+    <ClCompile Include="src\systemcomponents\bonds\base\Bond.cpp" />
+    <ClCompile Include="src\systemcomponents\bonds\FloatingInterestBalloonPaymentBond.cpp" />
+    <ClCompile Include="src\systemcomponents\bonds\LevelDebtServiceBond.cpp" />
+    <ClCompile Include="src\systemcomponents\Catchment.cpp" />
+    <ClCompile Include="src\systemcomponents\utility\InfrastructureManager.cpp" />
+    <ClCompile Include="src\systemcomponents\utility\Utility.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\AllocatedReservoir.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\base\WaterSource.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\Intake.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\Quarry.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\Relocation.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\Reservoir.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\ReservoirExpansion.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\SequentialJointTreatmentExpansion.cpp" />
+    <ClCompile Include="src\systemcomponents\watersources\WaterReuse.cpp" />
+    <ClCompile Include="src\utils\DataSeries.cpp" />
+    <ClCompile Include="src\utils\graph\Graph.cpp" />
+    <ClCompile Include="src\utils\ObjectivesCalculator.cpp" />
+    <ClCompile Include="src\utils\qpsolver\Array.cpp" />
+    <ClCompile Include="src\utils\qpsolver\QuadProg++.cpp" />
+    <ClCompile Include="src\utils\Utils.cpp" />
+    <ClCompile Include="tests\Tests.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\continuitymodels\base\ContinuityModel.h" />
+    <ClInclude Include="src\continuitymodels\ContinuityModelRealization.h" />
+    <ClInclude Include="src\continuitymodels\ContinuityModelROF.h" />
+    <ClInclude Include="src\controls\base\ControlRules.h" />
+    <ClInclude Include="src\controls\base\MinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\base\MinEnvironFlowControl.h" />
+    <ClInclude Include="src\controls\custom\FallsLakeMinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\custom\JordanLakeMinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\EvaporationSeries.h" />
+    <ClInclude Include="src\controls\FixedMinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\InflowMinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\SeasonalMinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\StorageMinEnvFlowControl.h" />
+    <ClInclude Include="src\controls\WwtpDischargeRule.h" />
+    <ClInclude Include="src\datacollector\AllocatedReservoirDataCollector.h" />
+    <ClInclude Include="src\datacollector\base\DataCollector.h" />
+    <ClInclude Include="src\datacollector\EmptyDataCollector.h" />
+    <ClInclude Include="src\datacollector\IntakeDataCollector.h" />
+    <ClInclude Include="src\datacollector\MasterDataCollector.h" />
+    <ClInclude Include="src\datacollector\QuaryDataCollector.h" />
+    <ClInclude Include="src\datacollector\ReservoirDataCollector.h" />
+    <ClInclude Include="src\datacollector\RestrictionsDataCollector.h" />
+    <ClInclude Include="src\datacollector\TransfersDataCollector.h" />
+    <ClInclude Include="src\datacollector\UtilitiesDataCollector.h" />
+    <ClInclude Include="src\datacollector\WaterReuseDataCollector.h" />
+    <ClInclude Include="src\droughtmitigationinstruments\base\DroughtMitigationPolicy.h" />
+    <ClInclude Include="src\droughtmitigationinstruments\InsuranceStorageToROF.h" />
+    <ClInclude Include="src\droughtmitigationinstruments\Restrictions.h" />
+    <ClInclude Include="src\droughtmitigationinstruments\Transfers.h" />
+    <ClInclude Include="src\problem\base\Problem.h" />
+    <ClInclude Include="src\problem\PaperTestProblem.h" />
+    <ClInclude Include="src\problem\Triangle.h" />
+    <ClInclude Include="src\simulation\Simulation.h" />
+    <ClInclude Include="src\systemcomponents\bonds\BalloonPaymentBond.h" />
+    <ClInclude Include="src\systemcomponents\bonds\base\Bond.h" />
+    <ClInclude Include="src\systemcomponents\bonds\FloatingInterestBalloonPaymentBond.h" />
+    <ClInclude Include="src\systemcomponents\bonds\LevelDebtServiceBond.h" />
+    <ClInclude Include="src\systemcomponents\Catchment.h" />
+    <ClInclude Include="src\systemcomponents\utility\InfrastructureManager.h" />
+    <ClInclude Include="src\systemcomponents\utility\Utility.h" />
+    <ClInclude Include="src\systemcomponents\watersources\AllocatedReservoir.h" />
+    <ClInclude Include="src\systemcomponents\watersources\base\WaterSource.h" />
+    <ClInclude Include="src\systemcomponents\watersources\Intake.h" />
+    <ClInclude Include="src\systemcomponents\watersources\Quarry.h" />
+    <ClInclude Include="src\systemcomponents\watersources\Relocation.h" />
+    <ClInclude Include="src\systemcomponents\watersources\Reservoir.h" />
+    <ClInclude Include="src\systemcomponents\watersources\ReservoirExpansion.h" />
+    <ClInclude Include="src\systemcomponents\watersources\SequentialJointTreatmentExpansion.h" />
+    <ClInclude Include="src\systemcomponents\watersources\WaterReuse.h" />
+    <ClInclude Include="src\utils\Constants.h" />
+    <ClInclude Include="src\utils\DataSeries.h" />
+    <ClInclude Include="src\utils\graph\Graph.h" />
+    <ClInclude Include="src\utils\Matrices.h" />
+    <ClInclude Include="src\utils\ObjectivesCalculator.h" />
+    <ClInclude Include="src\utils\qpsolver\Array.h" />
+    <ClInclude Include="src\utils\qpsolver\QuadProg++.h" />
+    <ClInclude Include="src\utils\Solutions.h" />
+    <ClInclude Include="src\utils\Utils.h" />
+    <ClInclude Include="tests\catch.hpp" />
+    <ClInclude Include="utils\Constants.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

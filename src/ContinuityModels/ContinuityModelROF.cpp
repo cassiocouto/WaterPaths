@@ -178,7 +178,7 @@ vector<double> ContinuityModelROF::calculateShortTermROFFullCalcs(int week) {
     // vector where risks of failure will be stored.
     vector<double> risk_of_failure((unsigned long) n_utilities, 0.0);
     vector<double> year_failure((unsigned long) n_utilities, 0.0);
-    double to_full[n_sources];
+    double *to_full = new double[n_sources];
 
     // Empty volumes are later used to update ROF tables.
     calculateEmptyVolumes(realization_water_sources, to_full);
@@ -255,7 +255,7 @@ vector<double> ContinuityModelROF::calculateShortTermROFFullCalcs(int week) {
 void ContinuityModelROF::updateStorageToROFTable(
         double storage_percent_decrement, int week_of_the_year,
         const double *to_full) {
-    double available_volumes[n_sources];
+    double *available_volumes = new double[n_sources];
     for (int ws = 0; ws < n_sources; ++ws) {
         available_volumes[ws] =
                 continuity_water_sources[ws]->getAvailableSupplyVolume();
@@ -269,8 +269,8 @@ void ContinuityModelROF::updateStorageToROFTable(
         /// receive the shifted storage curves.
         double percent_decrement_storage_level =
                 (double) s * storage_percent_decrement;
-        double delta_storage[n_sources];
-        double available_volumes_shifted[n_sources];
+        double *delta_storage = new double[n_sources];
+        double *available_volumes_shifted = new double[n_sources];
 //        std::copy(available_volumes, available_volumes + n_sources,
 //                  available_volumes_shifted);
         memcpy(available_volumes_shifted, available_volumes, sizeof(double) * n_sources);

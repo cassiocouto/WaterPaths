@@ -3,10 +3,13 @@
 //
 
 #include <numeric>
+#include <algorithm>
 #include "../../Utils/Constants.h"
 #include "../Catchment.h"
 #include "Base/WaterSource.h"
 #include "Intake.h"
+using namespace std;
+
 
 Intake::Intake(
         const char *name, const int id, const vector<Catchment *> &catchments,

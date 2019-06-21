@@ -4,8 +4,9 @@
 
 
 #include <numeric>
+#include <algorithm>
 #include "WaterReuse.h"
-
+using namespace std;
 WaterReuse::WaterReuse(const char *name, const int id, const double capacity)
         : WaterSource(name, id, vector<Catchment *>(), capacity, vector<int>(), capacity, WATER_REUSE) {
     available_volume = capacity;

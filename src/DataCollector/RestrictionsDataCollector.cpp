@@ -1,7 +1,7 @@
 //
 // Created by bernardoct on 8/25/17.
 //
-
+#include <sstream>
 #include <iomanip>
 #include "RestrictionsDataCollector.h"
 

@@ -3,7 +3,10 @@
 //
 
 #include <iostream>
+#include <algorithm>
+
 #include "Reservoir.h"
+
 
 using namespace std;
 

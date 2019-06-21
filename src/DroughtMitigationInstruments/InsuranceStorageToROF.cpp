@@ -3,8 +3,10 @@
 //
 
 #include <iostream>
+#include <algorithm>
 #include "InsuranceStorageToROF.h"
 #include "../Utils/Utils.h"
+using namespace std;
 
 InsuranceStorageToROF::InsuranceStorageToROF(const int id, vector<WaterSource *> &water_sources,
                                              const Graph &water_sources_graph,

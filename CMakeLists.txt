@@ -12,6 +12,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fopenmp -O0 -march=native")
 include_directories(/usr/include/mpi/)
 
 set(SOURCE_FILES
+		src/Utils/StdAfx.cpp
+        src/Utils/StdAfx.h
+		src/Utils/XGetopt.cpp
+        src/Utils/XGetopt.h
         src/ContinuityModels/Base/ContinuityModel.cpp
         src/ContinuityModels/Base/ContinuityModel.h
         src/ContinuityModels/ContinuityModelRealization.cpp
@@ -124,6 +128,10 @@ set(SOURCE_FILES
         src/Problem/PaperTestProblem.h)
 
 set(TEST_SOURCE_FILES
+		src/Utils/StdAfx.cpp
+        src/Utils/StdAfx.h
+		src/Utils/XGetopt.cpp
+        src/Utils/XGetopt.h
         src/ContinuityModels/Base/ContinuityModel.cpp
         src/ContinuityModels/Base/ContinuityModel.h
         src/ContinuityModels/ContinuityModelRealization.cpp

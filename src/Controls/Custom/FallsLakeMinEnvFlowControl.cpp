@@ -2,7 +2,9 @@
 // Created by bct52 on 7/3/17.
 //
 
-#include "FallsLakeMinEnvFlowControl.h"
+#include "FallsLakeMinEnvFlowControl.h";
+#include <algorithm> 
+using namespace std;
 
 
 FallsLakeMinEnvFlowControl::FallsLakeMinEnvFlowControl(
